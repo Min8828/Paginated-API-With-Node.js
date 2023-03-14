@@ -62,6 +62,7 @@ function paginatedResults(model) {
       };
     }
     try {
+      // the number of limit documents starting from startIndex
       results.results = await model.find().limit(limit).skip(startIndex).exec();
       res.paginatedResults = results;
       next();
